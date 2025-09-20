@@ -2,41 +2,62 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
-All colors MUST be HSL.
-*/
+/* Bloomex Sleep Calculator Design System - Purple/Blue Theme */
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
+    /* Core Background & Text */
+    --background: 270 20% 98%;
+    --foreground: 230 15% 15%;
 
+    /* Card & Surface Colors */
     --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
+    --card-foreground: 230 15% 15%;
+    --card-border: 270 15% 90%;
 
+    /* Popover */
     --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
+    --popover-foreground: 230 15% 15%;
 
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
+    /* Primary Purple/Blue Brand */
+    --primary: 245 75% 65%;
+    --primary-foreground: 0 0% 100%;
+    --primary-hover: 245 75% 60%;
 
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
+    /* Secondary Purple */
+    --secondary: 270 25% 95%;
+    --secondary-foreground: 245 75% 65%;
 
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
+    /* Muted Colors */
+    --muted: 270 15% 96%;
+    --muted-foreground: 230 10% 50%;
 
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
+    /* Accent Colors */
+    --accent: 260 60% 92%;
+    --accent-foreground: 245 75% 65%;
 
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
+    /* Destructive */
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
 
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
+    /* Borders & Inputs */
+    --border: 270 15% 88%;
+    --input: 270 15% 88%;
+    --ring: 245 75% 65%;
 
-    --radius: 0.5rem;
+    /* Sleep Calculator Specific */
+    --sleep-gradient: linear-gradient(135deg, hsl(245 75% 65%), hsl(260 70% 70%));
+    --sleep-card: 0 0% 100%;
+    --sleep-card-border: 270 20% 90%;
+    --sleep-time-bg: 245 50% 95%;
+    --sleep-time-hover: 245 60% 90%;
+
+    /* Benefits Colors */
+    --benefit-rest: 260 60% 92%;
+    --benefit-energy: 50 100% 92%;
+    --benefit-focus: 210 100% 92%;
+
+    --radius: 0.75rem;
 
     --sidebar-background: 0 0% 98%;
 
@@ -56,33 +77,56 @@ All colors MUST be HSL.
   }
 
   .dark {
-    --background: 222.2 84% 4.9%;
-    --foreground: 210 40% 98%;
+    /* Dark Mode - Navy/Black Theme */
+    --background: 230 25% 8%;
+    --foreground: 270 20% 95%;
 
-    --card: 222.2 84% 4.9%;
-    --card-foreground: 210 40% 98%;
+    /* Card & Surface Colors */
+    --card: 230 20% 12%;
+    --card-foreground: 270 20% 95%;
+    --card-border: 230 15% 20%;
 
-    --popover: 222.2 84% 4.9%;
-    --popover-foreground: 210 40% 98%;
+    /* Popover */
+    --popover: 230 20% 12%;
+    --popover-foreground: 270 20% 95%;
 
-    --primary: 210 40% 98%;
-    --primary-foreground: 222.2 47.4% 11.2%;
+    /* Primary Brand - Brighter in Dark */
+    --primary: 245 80% 70%;
+    --primary-foreground: 230 25% 8%;
+    --primary-hover: 245 80% 75%;
 
-    --secondary: 217.2 32.6% 17.5%;
-    --secondary-foreground: 210 40% 98%;
+    /* Secondary */
+    --secondary: 230 15% 18%;
+    --secondary-foreground: 245 80% 70%;
 
-    --muted: 217.2 32.6% 17.5%;
-    --muted-foreground: 215 20.2% 65.1%;
+    /* Muted Colors */
+    --muted: 230 15% 15%;
+    --muted-foreground: 230 10% 65%;
 
-    --accent: 217.2 32.6% 17.5%;
-    --accent-foreground: 210 40% 98%;
+    /* Accent Colors */
+    --accent: 230 15% 18%;
+    --accent-foreground: 245 80% 70%;
 
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 210 40% 98%;
+    /* Destructive */
+    --destructive: 0 75% 55%;
+    --destructive-foreground: 270 20% 95%;
 
-    --border: 217.2 32.6% 17.5%;
-    --input: 217.2 32.6% 17.5%;
-    --ring: 212.7 26.8% 83.9%;
+    /* Borders & Inputs */
+    --border: 230 15% 20%;
+    --input: 230 15% 20%;
+    --ring: 245 80% 70%;
+
+    /* Sleep Calculator Dark Mode */
+    --sleep-gradient: linear-gradient(135deg, hsl(245 80% 70%), hsl(260 75% 75%));
+    --sleep-card: 230 20% 12%;
+    --sleep-card-border: 230 15% 25%;
+    --sleep-time-bg: 230 20% 18%;
+    --sleep-time-hover: 230 25% 22%;
+
+    /* Benefits Colors - Dark Mode */
+    --benefit-rest: 260 40% 20%;
+    --benefit-energy: 50 60% 20%;
+    --benefit-focus: 210 60% 20%;
     --sidebar-background: 240 5.9% 10%;
     --sidebar-foreground: 240 4.8% 95.9%;
     --sidebar-primary: 224.3 76.3% 48%;
@@ -100,6 +144,28 @@ All colors MUST be HSL.
   }
 
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground transition-colors duration-300;
+  }
+
+  /* Smooth transitions for theme switching */
+  * {
+    @apply transition-colors duration-300;
+  }
+
+  /* Custom scrollbar */
+  ::-webkit-scrollbar {
+    width: 8px;
+  }
+
+  ::-webkit-scrollbar-track {
+    @apply bg-muted;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    @apply bg-border rounded-full;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    @apply bg-muted-foreground;
   }
 }
